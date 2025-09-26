@@ -1,0 +1,32 @@
+class A extends Thread {
+    public void run() {
+        System.out.println("Thread A");
+        System.out.println("In Thread A");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("i = " + i);
+        }
+        System.out.println("Thread A completed");
+    }
+}
+
+class B extends Thread {
+    public void run() {
+        System.out.println("Thread B");
+        System.out.println("In Thread B");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("i = " + i);
+        }
+        System.out.println("Thread B completed");
+    }
+}
+
+public class Main1 {
+    public static void main(String[] args) {
+        A ThreadA = new A();
+        B ThreadB = new B();
+
+        ThreadA.start();
+        ThreadB.start();
+        System.out.println("Main Thread End");
+    }
+}
