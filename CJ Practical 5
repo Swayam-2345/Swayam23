@@ -1,0 +1,27 @@
+class Square {
+    int length, square;
+
+    void areaSq(int in) {
+        length = in;
+        square = length * length;
+        System.out.println("Area of square = " + square);
+    }
+}
+
+class Rectangle extends Square {
+    int rect, breadth;
+
+    void areaRect(int br) {
+        breadth = br;
+        rect = length * breadth;
+        System.out.println("Area of rectangle = " + rect);
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String args[]) {
+        Rectangle r = new Rectangle();
+        r.areaSq(5);
+        r.areaRect(10);
+    }
+}
