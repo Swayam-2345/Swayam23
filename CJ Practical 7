@@ -1,0 +1,29 @@
+class MyException extends Exception {
+    String str;
+
+    MyException(String s) {
+        str = s;
+    }
+
+    @Override
+    public String toString() {
+        return "Exception Occurred = " + str;
+    }
+}
+
+public class Practs7 {
+    public static void main(String args[]) {
+        try {
+            float x = 5;
+            float y = 1000;
+            float z = x / y;
+            if (z < 0.5) {
+                throw new MyException("No is too small");
+            } else {
+                System.out.println("No is greater");
+            }
+        } catch (MyException e) {
+            System.out.println(e);
+        }
+    }
+}
