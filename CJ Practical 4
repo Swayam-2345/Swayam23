@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Practs3 {
+    public static void main(String args[]) {
+        int i, j;
+        String temp;
+        Scanner scan = new Scanner(System.in);
+        String names[] = new String[5];
+        System.out.println("Enter 5 Names/words:");
+        for (i = 0; i < 5; i++) {
+            names[i] = scan.nextLine();
+        }
+
+        for (i = 0; i < 5; i++) {
+            for (j = i + 1; j < 5; j++) {
+                if (names[j - 1].compareTo(names[i]) > 0) {
+                    temp = names[i];
+                    names[i] = names[j];
+                    names[j] = temp;
+                }
+            }
+        }
+
+        System.out.println("Words/Names Sorted in Alphabetical order successfully..!!");
+        for (i = 0; i < 5; i++) {
+            System.out.println(names[i]);
+        }
+    }
+}
