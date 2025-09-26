@@ -1,0 +1,24 @@
+package methodoverriding;
+
+public class MethodOverriding {
+    public static void main(String args[]) {
+        Base b1 = new Base();
+        b1.add(4, 5);
+        Base b2 = new Derived();
+        b2.add(6, 7);
+    }
+}
+
+class Base {
+    void add(int a, int b) {
+        int c = a + b;
+        System.out.println("Addition of base class: " + c);
+    }
+}
+
+class Derived extends Base {
+    void add(int a, int b) {
+        int c = a + b;
+        System.out.println("Addition of derived class = " + c);
+    }
+}
